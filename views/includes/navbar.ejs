@@ -1,0 +1,93 @@
+
+  <style>
+     .search-btn{
+      background-color: #fe424d;
+      color:#fff;
+      border-radius:35px;
+      padding: 0 1rem 0 1rem;
+     }
+
+     .search-btn:hover{
+      background-color: #fe424d;
+      color: #fff;
+     }
+
+     .search-btn i{
+      display: inline;
+      margin-right: 0.5rem;
+     }
+
+     .search-inp{
+      border-radius:35px;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+      font-size:1rem;
+     }
+
+     @media (max-width: 768px) {
+    .smscn{
+      /* padding: 0.4rem 1rem;
+      font-size: 0.9rem; */
+      display: none;
+    }
+
+    .search-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+
+    /* Background color for smaller screens */
+    .navbar-collapse {
+      background-color: #ffffff; /* Make sure the menu is not transparent on mobile */
+    }
+
+    .navbar-nav {
+      background-color: #ffffff; /* Same as above */
+    }
+  }
+  </style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid z-index: 1 background-color:blue" >
+      <a class="navbar-brand" href="/listings"><i class="fa fa-compass" aria-hidden="true"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+          
+        </div>
+        
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 search-inp smscn" type="search" placeholder=" available soon">
+            <button class="btn btn-outline search-btn smscn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search </button>
+          </form>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Wandalust your home</a>
+          <% if(!currUser){ %>
+          <a class="nav-link "  href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+           <% if(currUser) { %>
+            <i class="fa-solid fa-user nav-link"></i>
+          <a class="nav-link" href="/logout"><b>LogOut</b></a>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
+  </nav>
